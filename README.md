@@ -40,7 +40,7 @@
 ##  Getting Started
 
 1. **Invite the Bot:** [Invite Link](https://discord.com/oauth2/authorize?client_id=1370496970036084828&permissions=1376537061382&integration_type=0&scope=bot)
-2. **Add your user database to the root directory where the script is**
+2. **Add your user database** to the root directory where the script is
 3. **Set Up Permissions:** Give the bot the required moderation and member access.
 4. **Enjoy Peace of Mind:** Rocleaner does the scanning for you.
 
