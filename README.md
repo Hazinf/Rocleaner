@@ -1,4 +1,4 @@
-# 🔍 Rocleaner
+# Rocleaner
 
 **RocleanerV2** — Open Source Discord Bot for Safer Communities
 
