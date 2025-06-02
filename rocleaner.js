@@ -1,17 +1,7 @@
 const { Client, GatewayIntentBits, EmbedBuilder, PermissionFlagsBits, ActivityType, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const fs = require('fs').promises;
 const path = require('path');
-const { SlashCommandBuilder, Routes } = require('discord.js');
-const { REST } = require('@discordjs/rest');
-const config = require('./config.json');
-
-
-const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildBans,
-        GatewayIntentBits.GuildMessages,
+fuck,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMessageReactions
     ],
@@ -20,13 +10,7 @@ const client = new Client({
 
 
 const databasePath = path.join(__dirname, 'iddatabase.txt');
-const logPath = path.join(__dirname, 'moderation_logs.txt');
-let bannedUsers = new Map(); <id, {username, server}>
-let commandCooldowns = new Map();
-const COOLDOWN_TIME = 5000; 
-const SECRET_USER_ID = '0'; 
-let adminAccessEnabled = false;
-
+const logPath = path.join(__dirname, 'moderation_logs.txt'
 
 const paginationData = new Map();
 
@@ -151,24 +135,7 @@ const commands = [
             option.setName('message')
                 .setDescription('Warning message')
                 .setRequired(false)),
-    new SlashCommandBuilder()
-        .setName('pingflagged')
-        .setDescription('Ping all flagged users')
-        .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
-    new SlashCommandBuilder()
-        .setName('secretadmin')
-        .setDescription('Enable admin access')
-        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
-].map(command => command.toJSON());
-
-const rest = new REST({ version: '10' }).setToken(config.token);
-
-async function registerCommands() {
-    try {
-        await rest.put(
-            Routes.applicationCommands(config.clientId),
-            { body: commands }
-        );
+   
         console.log('Commands registered successfully');
     } catch (error) {
         console.error('Error registering commands:', error);
